@@ -1,0 +1,10 @@
+<h1 class="mb-5">Restaurants List</h1>
+<ul class='list-group'>
+    <% @restaurants.each do |restaurant| %>
+  <li class='list-group-item mb-2'>
+    <%= link_to restaurant.name, restaurant_path(restaurant.id) %> | <%= restaurant.category.capitalize %> | <%= restaurant.address %>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to 'Add new restaurant', new_restaurant_path, class: 'btn btn-outline-primary'%>
